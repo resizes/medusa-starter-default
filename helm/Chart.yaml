@@ -1,0 +1,15 @@
+apiVersion: v2
+name: medusa
+description: A starter for Medusa projects with PostgreSQL and Redis
+type: application
+version: 0.0.1
+appVersion: "2.8.8"
+dependencies:
+  - name: postgresql
+    version: 16.7.21
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+  - name: redis
+    version: 21.2.14
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled
