@@ -41,6 +41,6 @@ jobs:
     - name: Package and push helm chart to Amazon ECR
       run: |
         helm package ./helm
-        NAME=$(cat ./helm/Chart.yaml | grep name: | awk '{print $2}')
+        NAME=$(awk '/^name:/ {print $2; exit}' ./helm/Chart.yaml)
         VERSION=$(cat ./helm/Chart.yaml | grep version: | awk '{print $2}')
         helm push $NAME-$VERSION.tgz oci://$ECR_REGISTRY
