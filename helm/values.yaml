@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  repository: medusa-starter-default
+  repository: 917563509651.dkr.ecr.eu-west-1.amazonaws.com/medusa
   tag: "latest"
   pullPolicy: IfNotPresent
 
