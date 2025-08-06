@@ -1,14 +1,14 @@
 # Development Dockerfile for Medusa
-FROM node:20-slim
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /server
 
-# Copy package files and npm config
-COPY package.json package-lock.json ./
+# Copy package files and yarn config
+COPY package.json yarn.lock .yarnrc.yml ./
 
-# Install all dependencies using npm
-RUN npm ci
+# Install all dependencies using yarn
+RUN yarn install
 
 # Copy source code
 COPY . .
