@@ -58,9 +58,12 @@ affinity: {}
 
 # Environment variables
 env:
-  NODE_ENV: "production"
-  DATABASE_URL: "postgres://postgres:postgres@{{ .Release.Name }}-postgresql:5432/medusa-store"
-  REDIS_URL: "redis://{{ .Release.Name }}-redis:6379"
+  - name: NODE_ENV
+    value: "production"
+  - name: DATABASE_URL
+    value: "postgres://postgres:postgres@medusa-postgresql-hl:5432/medusa-store"
+  - name: REDIS_URL
+    value: "redis://medusa-redis-hl:6379"
 
 # PostgreSQL configuration
 postgresql:

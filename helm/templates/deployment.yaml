@@ -38,12 +38,7 @@ spec:
               containerPort: 9000
               protocol: TCP
           env:
-            - name: NODE_ENV
-              value: {{ .Values.env.NODE_ENV | quote }}
-            - name: DATABASE_URL
-              value: {{ .Values.env.DATABASE_URL | quote }}
-            - name: REDIS_URL
-              value: {{ .Values.env.REDIS_URL | quote }}
+            {{- toYaml .Values.env | nindent 12 }}
           livenessProbe:
             httpGet:
               path: /health
