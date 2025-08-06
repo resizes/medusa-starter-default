@@ -1,5 +1,5 @@
 # Development Dockerfile for Medusa
-FROM node:20-alpine
+FROM node:20-slim
 
 # Set working directory
 WORKDIR /server
@@ -8,7 +8,7 @@ WORKDIR /server
 COPY package.json package-lock.json ./
 
 # Install all dependencies using npm
-RUN npm install
+RUN npm ci
 
 # Copy source code
 COPY . .
