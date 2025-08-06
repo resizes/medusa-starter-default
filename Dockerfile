@@ -8,7 +8,7 @@ WORKDIR /server
 COPY package.json yarn.lock .yarnrc.yml ./
 
 # Install all dependencies using yarn
-RUN yarn install
+RUN yarn install --network-timeout 1000000
 
 # Copy source code
 COPY . .
