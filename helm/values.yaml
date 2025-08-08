@@ -57,9 +57,37 @@ tolerations: []
 affinity: {}
 
 # Environment variables
-env:
-  - name: NODE_ENV
-    value: "production"
+env-server:
+  - name: COOKIE_SECRET
+    value: "4u98dacosfhi4wfqwf"
+  - name: JWT_SECRET
+    value: "fw809fasafso23rlj"
+  - name: STORE_CORS
+    value: "https://medusa.resiz.es"
+  - name: ADMIN_CORS
+    value: "https://medusa.resiz.es"
+  - name: AUTH_CORS
+    value: "https://medusa.resiz.es"
+  - name: DISABLE_MEDUSA_ADMIN
+    value: false
+  - name: MEDUSA_WORKER_MODE
+    value: "server"
+  - name: DATABASE_URL
+    value: "postgres://postgres:postgres@medusa-postgresql-hl:5432/medusa-store"
+  - name: REDIS_URL
+    value: "redis://medusa-redis-hl:6379"
+  - name: MEDUSA_BACKEND_URL
+    value: "https://medusa.resiz.es"
+
+env-worker:
+  - name: COOKIE_SECRET
+    value: "4u98dacosfhi4wfqwf"
+  - name: JWT_SECRET
+    value: "fw809fasafso23rlj"
+  - name: DISABLE_MEDUSA_ADMIN
+    value: true
+  - name: MEDUSA_WORKER_MODE
+    value: "worker"
   - name: DATABASE_URL
     value: "postgres://postgres:postgres@medusa-postgresql-hl:5432/medusa-store"
   - name: REDIS_URL

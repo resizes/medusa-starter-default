@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "medusa.fullname" . }}
+  name: {{ include "medusa.fullname" . }}-worker
   labels:
     {{- include "medusa.labels" . | nindent 4 }}
 spec:
@@ -38,7 +38,7 @@ spec:
               containerPort: 9000
               protocol: TCP
           env:
-            {{- toYaml .Values.env | nindent 12 }}
+            {{- toYaml .Values.env-worker | nindent 12 }}
           livenessProbe:
             httpGet:
               path: /health
