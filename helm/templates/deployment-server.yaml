@@ -38,7 +38,7 @@ spec:
               containerPort: 9000
               protocol: TCP
           env:
-            {{- toYaml .Values.env-server | nindent 12 }}
+            {{- toYaml .Values.envServer | nindent 12 }}
           livenessProbe:
             httpGet:
               path: /health

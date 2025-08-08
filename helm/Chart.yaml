@@ -2,7 +2,7 @@ apiVersion: v2
 name: medusa
 description: A starter for Medusa projects with PostgreSQL and Redis
 type: application
-version: 0.0.3
+version: 0.0.4
 appVersion: "2.8.8"
 dependencies:
 - name: postgresql

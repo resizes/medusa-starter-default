@@ -57,7 +57,7 @@ tolerations: []
 affinity: {}
 
 # Environment variables
-env-server:
+envServer:
   - name: COOKIE_SECRET
     value: "4u98dacosfhi4wfqwf"
   - name: JWT_SECRET
@@ -79,7 +79,7 @@ env-server:
   - name: MEDUSA_BACKEND_URL
     value: "https://medusa.resiz.es"
 
-env-worker:
+envWorker:
   - name: COOKIE_SECRET
     value: "4u98dacosfhi4wfqwf"
   - name: JWT_SECRET
