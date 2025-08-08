@@ -7,6 +7,8 @@ WORKDIR /server
 # Copy package files and yarn config
 COPY package.json yarn.lock .yarnrc.yml ./
 
+RUN yarn install --network-timeout 1000000
+
 # Copy source code
 COPY . .
 
