@@ -10,7 +10,9 @@
 # echo "Starting Medusa server..."
 # npm run start
 
-npx medusa build 
+npx medusa build
+
+sleep 10
 
 cd ./medusa/server 
 
