@@ -14,7 +14,7 @@ npx medusa build
 
 sleep 10
 
-cd ./medusa/server 
+cd .medusa/server 
 
 yarn install --network-timeout 1000000
 
